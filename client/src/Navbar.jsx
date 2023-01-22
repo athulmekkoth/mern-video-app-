@@ -64,6 +64,10 @@ const User = styled.div`
   gap: 10px;
   font-weight: 500;
   color: ${({ theme }) => theme.text};
+  @media (max-width: 768px) {
+    display: none;
+  }
+ 
 `;
 
 const Avatar = styled.img`
@@ -71,6 +75,10 @@ const Avatar = styled.img`
   height: 32px;
   border-radius: 50%;
   background-color: #999;
+  @media (max-width: 768px) {
+    display: none;
+  }
+ 
 `;
 
 export default function Navbar () {

@@ -35,7 +35,7 @@ export default function App() {
      
       <Route  path='/' element={<Home type="random"/>} />
       <Route  path='trends' element={<Home type="trends"/>} />
-      <Route  path='subscribtion' element={<Home type="sub"/>} />
+      <Route  path="subscribtion" element={<Home type="sub"/>} />
       <Route  path='/' element={<Home/>} />
       <Route path='search' element={<Search />} />
        <Route  path='signin' element={<SignIn/>} />

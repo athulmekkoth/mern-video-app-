@@ -21,9 +21,18 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   color:${({theme})=>theme.text};
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    height: auto;
+  }
 `;
 const Wrapper = styled.div`
   padding: 18px 26px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 const Logo = styled.div`
   display: flex;
@@ -32,11 +41,19 @@ const Logo = styled.div`
   font-weight: bold;
   margin-bottom: 25px;
   color:white;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
 `;
 
 const Img = styled.img`
   height: 25px;
-  
+
+  @media (max-width: 768px) {
+    height: 20px;
+  }
 `;
 
 const Item = styled.div`
@@ -46,6 +63,12 @@ const Item = styled.div`
   cursor: pointer;
   padding: 7.5px 0px;
 
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px 0px;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.soft};
   }
@@ -54,6 +77,10 @@ const Item = styled.div`
 const Hr = styled.hr`
   margin: 15px 0px;
   border: 0.5px solid ${({ theme }) => theme.soft};
+
+  @media (max-width: 768px) {
+    margin: 10px 0px;
+  }
 `;
 
 const Login = styled.div``;
@@ -69,6 +96,11 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 3px 10px;
+  }
 `;
 
 const Title = styled.h2`
@@ -76,7 +108,13 @@ const Title = styled.h2`
   font-weight: 500;
   color: #aaaaaa;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
 `;
+
 
 export default function Menu(props)
 {
@@ -101,23 +139,25 @@ export default function Menu(props)
 
           </Logo>
           </Link>
+          <Link to='/' style={{textDecoration:"none:",color:"inherit"}}> 
           <Item>
           <HomeIcon />
           Home
         </Item>
+        </Link>
         <Link to ="trends" style={{textDecoration:"none:",color:"inherit"}}>
         <Item>
           <ExploreOutlinedIcon />
           Explore
         </Item>
         </Link>
-        <Link to ="subscribtion" style={{textDecoration:"none:",color:"inherit"}}></Link>
+        <Link to ="subscribtion" style={{textDecoration:"none:",color:"inherit"}}>
         <Item>
-        
-          <SubscriptionsOutlinedIcon />
-          Subscriptions 
+          <ExploreOutlinedIcon />
+          Subscribtion
         </Item>
-      
+        </Link>
+     
         
         <Hr />
       {!currentUser &&
