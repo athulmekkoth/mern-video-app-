@@ -91,6 +91,18 @@ console.log(res.data)
      console.log(err)
     }
   };
+
+  const handlesignup= async(e)=>{
+    e.preventDefault();
+    try{
+      const res=await  axios.post("/auth/signup",{name,email,password})
+      console.log(res.data)
+    }
+    catch(err)
+    {
+      console.warn(err);
+    }
+  }
   const signinwithgoogle=async ()=>{
     dispatch(loginStart())
     signInWithPopup(auth,provider)
@@ -141,13 +153,13 @@ dispatch(loginFailure())
           onChange={(e) => setName(e.target.value)}
         />
     
-        <Input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+    <Input placeholder="email" onChange={(e) => setEmail(e.target.value)} />
         <Input
           type="password"
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button>Sign up</Button>
+        <Button onClick={handlesignup}>Sign up</Button>
        
       </Wrapper>
       <More>
