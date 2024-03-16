@@ -1,4 +1,4 @@
 # mern-video-app-
 
-Mern video App 
+Streamx
 People can add subscribe like videos 
